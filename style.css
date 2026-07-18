@@ -1,0 +1,1504 @@
+/* ======================================================
+   PORTUGAL NATIONAL TEAM WEBSITE
+   PART 1 - GLOBAL + HERO SECTION
+   Author : Shubham
+====================================================== */
+
+/* -------------------- GOOGLE FONTS -------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap');
+
+/* -------------------- RESET -------------------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* -------------------- BODY -------------------- */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    color:#ffffff;
+
+    background:
+        linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.70)),
+        url("football ground.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+
+}
+/* =========================
+        INTRO SCREEN
+========================= */
+
+#intro{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    animation:introFade 4s forwards;
+
+}
+
+.intro-logo{
+
+    width:180px;
+
+    opacity:0;
+
+    animation:
+
+        logoAppear 1s forwards,
+
+        pulse 2s infinite;
+
+}
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        filter:drop-shadow(0 0 10px #FFD700);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        filter:drop-shadow(0 0 30px #FFD700);
+
+    }
+
+}
+
+.intro-title{
+
+    position:relative;
+
+    color:white;
+
+    font-size:90px;
+
+    letter-spacing:12px;
+
+    margin:30px 0 10px;
+
+    font-family:'Bebas Neue',sans-serif;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    animation:titleAppear 1s forwards;
+
+    animation-delay:.8s;
+
+}
+.intro-title::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.95),
+
+        rgba(255,215,0,.9),
+
+        rgba(255,255,255,.95),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:shine 2.5s ease forwards;
+
+    animation-delay:1.8s;
+
+}
+@keyframes shine{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:160%;
+
+    }
+
+}
+.intro-text{
+
+    color:#FFD700;
+
+    letter-spacing:6px;
+
+    font-size:22px;
+
+    opacity:0;
+
+    animation:titleAppear 1s forwards;
+
+    animation-delay:1.5s;
+
+}
+@keyframes logoAppear{
+
+    from{
+
+        transform:scale(.4);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes titleAppear{
+
+    from{
+
+        transform:translateY(40px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes introFade{
+
+    0%,85%{
+
+        opacity:1;
+
+        visibility:visible;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        visibility:hidden;
+
+    }
+
+}
+
+/* -------------------- HERO -------------------- */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.82),
+    rgba(0,0,0,.92)
+    ),
+    url("football ground.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+.hero{
+
+box-shadow:
+inset 0 120px 150px rgba(255,255,255,.08),
+inset 0 -120px 150px rgba(0,0,0,.9);
+
+}
+.hero-content{
+
+    position:relative;
+    z-index:5;
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:60px;
+
+    border-radius:35px;
+
+    background:rgba(0,0,0,.25);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.5);
+
+}
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at left,
+    rgba(0,102,51,.22),
+    transparent 45%),
+
+    radial-gradient(circle at right,
+    rgba(164,16,52,.22),
+    transparent 45%);
+
+    pointer-events:none;
+
+}
+.hero-banner{
+
+    width:700px;
+
+    max-width:90%;
+
+    opacity:.95;
+
+    filter:
+
+    drop-shadow(0 0 25px rgba(255,215,0,.4))
+
+    drop-shadow(0 0 60px rgba(255,0,0,.2));
+
+}
+.hero-particles{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(#FFD700 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.12;
+
+    animation:moveParticles 18s linear infinite;
+
+}
+
+@keyframes moveParticles{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-120px);
+
+    }
+
+}
+/* ==========================
+        NAVIGATION BAR
+========================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:15px 50px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+    z-index:999;
+
+    box-sizing:border-box;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:55px;
+
+    border-radius:8px;
+
+    border:2px solid #FFD700;
+
+}
+
+.logo span{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+.hero{
+
+    padding-top:100px;
+
+}
+.nav-links a.active{
+
+    color:#FFD700;
+
+}
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#FFD700;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:3px;
+
+    background:#FFD700;
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top left,
+
+    rgba(255,255,255,.12),
+
+    transparent 35%),
+
+    radial-gradient(circle at top right,
+
+    rgba(255,255,255,.12),
+
+    transparent 35%);
+
+}
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(circle,#FFD700 2px,transparent 2px);
+
+    background-size:120px 120px;
+
+    opacity:.12;
+
+}
+@keyframes glow{
+
+0%,100%{
+
+text-shadow:
+0 0 20px #fff,
+0 0 35px #A41034;
+
+}
+
+50%{
+
+text-shadow:
+0 0 35px #FFD700,
+0 0 60px #A41034;
+
+}
+
+}
+
+.team-name{
+
+animation:glow 3s infinite;
+
+}
+
+/* -------------------- TEAM LOGO -------------------- */
+
+.team-logo{
+
+    width:110px;
+
+    border:2px solid #d4af37;
+    border-radius:12px;
+
+    box-shadow:0 0 18px rgba(212,175,55,.45);
+
+    margin-bottom:20px;
+
+    transform-origin:left center;
+
+    animation:wave 3s ease-in-out infinite;
+
+}
+
+/* -------------------- TEAM NAME -------------------- */
+.team-name{
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:160px;
+
+    letter-spacing:16px;
+
+    color:white;
+
+    margin:0;
+
+    line-height:.9;
+
+    text-shadow:
+
+        0 0 20px white,
+
+        0 0 40px #A41034,
+
+        0 0 80px #FFD700;
+
+}
+.hero-tagline{
+
+    color:#FFD700;
+
+    font-size:22px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    margin:25px 0;
+
+}
+.scroll{
+
+position:absolute;
+
+bottom:30px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:50px;
+
+color:white;
+
+animation:bounce 1.5s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+transform:translate(-50%,12px);
+
+}
+
+}
+/* -------------------- SUBTITLE -------------------- */
+
+.subtitle{
+
+    margin-top:12px;
+    margin-bottom:45px;
+
+    color:#d4af37;
+
+    font-size:24px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+}
+
+/* -------------------- HERO STATS -------------------- */
+
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.stat-box{
+
+    min-width:150px;
+
+    padding:20px 30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    transition:.35s ease;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#d4af37;
+
+    box-shadow:0 0 22px rgba(212,175,55,.45);
+
+}
+
+.stat-box h3{
+
+    color:#FFD700;
+
+    font-size:38px;
+
+    margin-bottom:8px;
+
+}
+
+.stat-box p{
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+}
+
+/* -------------------- ANIMATIONS -------------------- */
+
+@keyframes wave{
+
+    0%{
+
+        transform:perspective(600px) rotateY(0deg);
+
+    }
+
+    25%{
+
+        transform:perspective(600px) rotateY(-10deg);
+
+    }
+
+    50%{
+
+        transform:perspective(600px) rotateY(0deg);
+
+    }
+
+    75%{
+
+        transform:perspective(600px) rotateY(10deg);
+
+    }
+
+    100%{
+
+        transform:perspective(600px) rotateY(0deg);
+
+    }
+
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+@media(max-width:768px){
+
+    .team-name{
+
+        font-size:60px;
+        letter-spacing:5px;
+
+    }
+
+    .subtitle{
+
+        font-size:18px;
+
+    }
+
+    .team-logo{
+
+        width:90px;
+
+    }
+
+    .stat-box{
+
+        min-width:130px;
+
+    }
+
+}
+/* ======================================================
+   PLAYER SECTION
+====================================================== */
+
+.player-grid{
+
+    width:90%;
+    max-width:1400px;
+
+    margin:70px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+}
+
+/* ---------------- PLAYER CARD ---------------- */
+
+.player-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:rgba(20,20,20,.75);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+}
+
+/* Shine Effect */
+
+.player-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-60%;
+
+    width:45%;
+
+    height:320%;
+
+    background:rgba(255,255,255,.12);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.player-card:hover::before{
+
+    left:140%;
+
+}
+
+/* Hover */
+
+.player-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    border-color:#FFD700;
+
+    box-shadow:0 0 30px rgba(255,215,0,.35);
+
+}
+
+/* ---------------- PLAYER IMAGE ---------------- */
+
+.player-img{
+
+    width:100%;
+
+    height:330px;
+
+    object-fit:contain;
+
+    padding:15px;
+
+    transition:.4s ease;
+
+}
+
+.player-card:hover .player-img{
+
+    transform:scale(1.08);
+
+}
+
+/* ---------------- PLAYER NAME ---------------- */
+
+.player-name{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:white;
+
+    margin-top:10px;
+
+    transition:.3s;
+
+}
+
+.player-name:hover{
+
+    color:#FFD700;
+
+}
+
+.player-name::after{
+
+    content:"";
+
+    display:block;
+
+    width:70px;
+
+    height:3px;
+
+    background:#FFD700;
+
+    margin:10px auto;
+
+}
+
+/* ---------------- CLUB NAME ---------------- */
+
+.player-club{
+
+    text-align:center;
+
+    color:#cfcfcf;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+
+    font-size:15px;
+
+}
+
+/* ---------------- PLAYER STATS ---------------- */
+
+.player-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    padding:0 20px 25px;
+
+}
+
+
+/* Individual Stat */
+
+.stat{
+
+    flex:1;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+    padding:15px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.stat:hover{
+
+    background:#A41034;
+
+}
+
+.stat h3{
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    margin-bottom:6px;
+
+}
+
+.stat span{
+
+    color:#ffffff;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:768px){
+
+    .player-grid{
+
+        width:95%;
+
+    }
+
+    .player-img{
+
+        height:270px;
+
+    }
+
+    .player-name{
+
+        font-size:24px;
+
+    }
+
+}
+/*==========================
+      TROPHY TIMELINE
+===========================*/
+
+.timeline-section{
+
+    padding:100px 40px;
+    text-align:center;
+
+}
+
+.timeline{
+
+    position:relative;
+
+    max-width:1100px;
+
+    margin:70px auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+
+}
+
+/* Gold line */
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:90px;
+
+    left:8%;
+
+    width:84%;
+
+    height:5px;
+
+    background:linear-gradient(to right,#A41034,#FFD700,#A41034);
+
+    border-radius:20px;
+
+}
+
+/* Each Trophy */
+
+.timeline-item{
+
+    width:280px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* Gold Dot */
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:82px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:22px;
+    height:22px;
+
+    background:#FFD700;
+
+    border-radius:50%;
+
+    box-shadow:0 0 20px #FFD700;
+
+}
+
+/* Card */
+
+.timeline-content{
+
+    margin-top:130px;
+
+    padding:20px;
+
+    background:rgba(20,20,20,.82);
+
+    backdrop-filter:blur(12px);
+
+    border:2px solid rgba(212,175,55,.35);
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+.timeline-content:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 0 30px rgba(255,215,0,.45);
+
+}
+
+/* Trophy Image */
+
+.timeline-trophy{
+
+    width:90px;
+    height:140px;
+
+    object-fit:contain;
+
+    margin-bottom:15px;
+
+}
+
+/* Heading */
+
+.timeline-content h3{
+
+    color:#FFD700;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+}
+
+/* Year */
+
+.timeline-content p{
+
+    color:#ccc;
+
+    font-size:18px;
+
+}
+
+/* ======================================================
+   FIXTURES
+====================================================== */
+
+.fixtures{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:100px auto;
+
+    text-align:center;
+
+}
+
+.fixture-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.fixture-card{
+
+    background:rgba(20,20,20,.75);
+
+    backdrop-filter:blur(12px);
+
+    border:2px solid rgba(212,175,55,.3);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s;
+
+}
+
+.fixture-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 25px rgba(255,215,0,.35);
+
+}
+
+.fixture-card h3{
+
+    color:#FFD700;
+
+    margin-bottom:20px;
+
+}
+
+.fixture-card p{
+
+    margin:8px 0;
+
+    color:white;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer{
+
+    margin-top:100px;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    background:rgba(0,0,0,.45);
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+}
+
+footer h2{
+
+    color:#FFD700;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    color:#cccccc;
+
+    margin:6px 0;
+
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#FFD700;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#f7c600;
+
+}
+
+/* ======================================================
+   GLOBAL ANIMATIONS
+====================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+img{
+
+    user-select:none;
+
+}
+
+::selection{
+
+    background:#FFD700;
+
+    color:black;
+
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media(max-width:768px){
+
+    .section-title{
+
+        font-size:42px;
+
+    }
+
+    .trophy-icon{
+
+        width:130px;
+
+        height:180px;
+
+    }
+
+}
+/* =======================
+   GRAPH SECTION
+======================= */
+
+.graph-section{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:100px auto;
+
+    text-align:center;
+
+}
+
+.graph-card{
+
+    width:90%;
+    max-width:1000px;
+
+    margin:40px auto;
+
+    padding:35px;
+
+    background:rgba(20,20,20,.8);
+
+    backdrop-filter:blur(15px);
+
+    border:2px solid rgba(212,175,55,.35);
+
+    border-radius:20px;
+
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+
+}
+.graph-card canvas{
+
+    width:100% !important;
+
+    height:300px !important;
+
+}
+
+.graph-card:hover{
+
+    box-shadow:0 0 30px rgba(255,215,0,.35);
+
+}
+.hero-btn{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:18px 45px;
+
+    background:#A41034;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.3s;
+    margin-bottom: 10px;
+
+}
+
+.hero-btn:hover{
+
+    background:#FFD700;
+
+    color:black;
+
+    transform:translateY(-5px);
+
+}
+.hero-banner{
+
+    width:40%;
+    height: 50%;
+    border-radius: 20px;
+    border-color: #bd7853;
+    border-style: solid;
+    border-width: 1px;
+
+    
+
+}
+.player-link{
+    text-decoration:none;
+    color:inherit;
+    transition:.3s;
+}
+
+.player-link:hover{
+    color:#FFD700;
+}
+body.loading {
+    overflow: hidden;
+    height: 100vh;
+}
+
+body.loading::-webkit-scrollbar {
+    display: none;
+}
+#intro{
+    transition: opacity 1s ease;
+}
+
+#intro.hide{
+    opacity: 0;
+    pointer-events: none;
+}
